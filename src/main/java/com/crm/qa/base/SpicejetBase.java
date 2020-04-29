@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class SpicejetBase {
 	
@@ -28,8 +29,6 @@ public class SpicejetBase {
 		String BrowserName = props.getProperty("browser");
 		
 		if(BrowserName.equals("chrome")) {
-			System.setProperty("webdriver. chrome.silentOutput","true");
-			System.setProperty("Webdriver.chrome.driver", "\"D:\\\\Epsa\\\\Selenium Project-March2020\\\\FreeCRM\\\\chromedriver.exe\"");
 			driver = new ChromeDriver();
 		}
 		

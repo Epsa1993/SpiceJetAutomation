@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.base.SpicejetBase;
@@ -29,6 +29,8 @@ public class HomePage extends SpicejetBase {
 	@FindBy(xpath="SpiceMax")
 	WebElement max;
 	
+	WebElement title = driver.findElement(By.xpath("//select[@id='CONTROLGROUPREGISTERVIEW_PersonInputRegisterView_DropDownListTitle']"));
+	
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -37,25 +39,19 @@ public class HomePage extends SpicejetBase {
 		return driver.getTitle();
 	}
 	 
-	public void signupDropdown() throws InterruptedException { 
-		
-	 WebElement remote= driver.findElement(By.xpath("//a[@id='ctl00_HyperLinkLogin']"));
-
-	 WebElement spiceclub = driver.findElement(By.xpath("//a[text()='SpiceClub Members']"));
- 
-	 WebElement signup = driver.findElement(By.xpath("//a[text()='Sign up']"));
-
-	 WebElement memberlogin = driver.findElement(By.xpath("//li[@class=\"hide-mobile\"]//a[text()='Member Login']"));
-	 Actions action = new Actions(driver); 
-	 Thread.sleep(20000);
-	 action.moveToElement(remote).build().perform();
-	 action.moveToElement(spiceclub).build().perform(); signup.click();
-	 action.moveToElement(signup).click().build().perform();
-	 }
-	 
-	  public void AddOns() { 
-		  Actions action = new Actions(driver);
-		  action.moveToElement(AddOns).build().perform();
-		  max.click();
-	  }
+	
+	  public void signupDropdown() {
+	  
+	  WebElement remote= driver.findElement(By.xpath("//a[@id='ctl00_HyperLinkLogin']"));
+	  
+	  WebElement spiceclub = driver.findElement(By.xpath("//a[text()='SpiceClub Members']"));
+	  
+	  WebElement signup = driver.findElement(By.xpath("//a[text()='Sign up']"));
+	  
+	  Actions action = new Actions(driver); //Thread.sleep(20000);
+	  action.moveToElement(remote).build().perform();
+	  action.moveToElement(spiceclub).build().perform(); signup.click();
+	  action.moveToElement(signup).click().build().perform(); 
+	  }	 
+	  
 }

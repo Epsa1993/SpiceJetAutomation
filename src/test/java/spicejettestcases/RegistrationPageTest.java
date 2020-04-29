@@ -26,15 +26,10 @@ public class RegistrationPageTest extends SpicejetBase {
 	}
 	
 	@Test
-	public void getRegistrationTitle() throws InterruptedException {
+	public void getRegistrationTitle(){
 		homepageobj.signupDropdown();
 		registrationpageobj.getRegistrationTitle();
 		registrationpageobj.memberRegistration();
 	}
 	
-	@AfterTest
-	public void tearDown() {
-		//time.sleep(5000);
-		driver.close();		
-	}
 }

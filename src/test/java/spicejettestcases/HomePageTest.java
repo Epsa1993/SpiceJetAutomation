@@ -1,5 +1,6 @@
 package spicejettestcases;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -26,17 +27,10 @@ public class HomePageTest extends SpicejetBase {
 	public void spicejetTitleTest() {
 		String spicejetTitle = homepageobj.spicejetTitle();
 		System.out.println("spicejetTitle " + spicejetTitle);
-		//Assert.assertEquals(spicejetTitle, "SpiceJet - Flight Booking for Domestic and International, Cheap Air Tickets", "title matches");
 	}
 	
     @Test 
-	public void spicejetDropdownTest() throws InterruptedException {
+	public void spicejetDropdownTest() {
 		homepageobj.signupDropdown();
-		}
-	
-	/*
-	 * @Test public void AddOns() { homepageobj.AddOns(); }
-	 */
-	 
-	
+	}
 }

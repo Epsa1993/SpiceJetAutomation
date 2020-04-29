@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="spicejettestcases.RegistrationPageTest">
+      <class name="spicejettestcases.HomePageTest">
         <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="getRegistrationTitle"/>
+          <include name="spicejetDropdownTest"/>
+          <include name="spicejetTitleTest"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- spicejettestcases.RegistrationPageTest -->
+      </class> <!-- spicejettestcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
